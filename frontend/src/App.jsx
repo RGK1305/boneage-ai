@@ -3,7 +3,7 @@ import UploadWorkspace from './components/UploadWorkspace'
 import ProcessingIndicator from './components/ProcessingIndicator'
 import ResultsDashboard from './components/ResultsDashboard'
 
-const API_BASE = 'http://localhost:8000'
+const API_BASE = import.meta.env.VITE_API_URL || ''
 
 function App() {
   // States: idle | processing | results | error
