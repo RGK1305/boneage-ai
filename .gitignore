@@ -1,0 +1,55 @@
+# ==========================================
+# Bone Age Assessment — .gitignore
+# ==========================================
+
+# --- Model Artifacts (LARGE FILES) ---
+*.pth
+*.pt
+*.joblib
+*.pkl
+*.h5
+*.onnx
+
+# --- Python ---
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# --- Virtual Environments ---
+bone_env/
+venv/
+.env/
+env/
+
+# --- Node.js ---
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
+
+# --- IDE ---
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Jupyter ---
+.ipynb_checkpoints/
+
+# --- Docker ---
+*.log
+
+# --- Misc ---
+.env
+.env.local
+.env.production

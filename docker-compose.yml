@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "8000:8000"
+    environment:
+      - PYTHONUNBUFFERED=1
+    volumes:
+      - ./best_bone_age_model.pth:/app/models/best_bone_age_model.pth
+      - ./xgb_model.joblib:/app/models/xgb_model.joblib
+      - ./ridge_model.joblib:/app/models/ridge_model.joblib
+      - ./scaler.joblib:/app/models/scaler.joblib
+      - ./ensemble_weights.joblib:/app/models/ensemble_weights.joblib
+    restart: unless-stopped
+    networks:
+      - bonage-net
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend
+    restart: unless-stopped
+    networks:
+      - bonage-net
+
+networks:
+  bonage-net:
+    driver: bridge
