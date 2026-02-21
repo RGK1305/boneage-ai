@@ -254,7 +254,7 @@ def main():
     result = minimize(mae_loss, [0.33, 0.33, 0.33], method='SLSQP', bounds=bnds, constraints=cons)
     opt_weights = result.x
 
-    print(f"\n✅ OPTIMAL ENSEMBLE WEIGHTS:")
+    print("\n✅ OPTIMAL ENSEMBLE WEIGHTS:")
     print(f"   Deep Learning: {opt_weights[0]:.4f}")
     print(f"   XGBoost:       {opt_weights[1]:.4f}")
     print(f"   Ridge:         {opt_weights[2]:.4f}")

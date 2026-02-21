@@ -9,7 +9,6 @@ import os
 import torch
 import torch.nn as nn
 from torchvision import models
-import xgboost as xgb
 import joblib
 import logging
 

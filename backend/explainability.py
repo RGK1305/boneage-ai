@@ -14,7 +14,7 @@ from PIL import Image
 from torchvision import transforms
 
 from model_manager import (
-    ModelManager, IMG_SIZE, MAX_AGE_SCALE,
+    ModelManager, IMG_SIZE,
     IMAGENET_MEAN, IMAGENET_STD
 )
 

@@ -5,7 +5,7 @@ Main entry point for the backend API server.
 Includes CORS, upload validation, model loading at startup, and prediction endpoint.
 """
 
-import time
+
 import logging
 from contextlib import asynccontextmanager
 
