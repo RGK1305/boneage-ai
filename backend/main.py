@@ -6,11 +6,13 @@ Includes CORS, upload validation, model loading at startup, and prediction endpo
 """
 
 
+import os
 import logging
 from contextlib import asynccontextmanager
 
 from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 from fastapi.responses import JSONResponse
 from typing import Optional
 
@@ -156,3 +158,12 @@ async def predict(
             status_code=500,
             detail=f"Prediction failed: {str(e)}"
         )
+
+
+# ==========================================
+# STATIC FILE SERVING (production / HF Spaces)
+# ==========================================
+STATIC_DIR = os.environ.get("STATIC_DIR", "")
+if STATIC_DIR and os.path.isdir(STATIC_DIR):
+    app.mount("/", StaticFiles(directory=STATIC_DIR, html=True), name="static")
+    logger.info(f"📁 Serving frontend from {STATIC_DIR}")

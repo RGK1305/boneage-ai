@@ -24,13 +24,14 @@ SEX_FEATURE_SCALE = 5.0
 IMAGENET_MEAN = [0.485, 0.456, 0.406]
 IMAGENET_STD = [0.229, 0.224, 0.225]
 
-# Model artifacts relative to project root
+# Model artifacts — configurable via MODEL_DIR env var (for containers)
 PROJECT_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-PYTORCH_MODEL_PATH = os.path.join(PROJECT_ROOT, "best_bone_age_model.pth")
-XGB_MODEL_PATH = os.path.join(PROJECT_ROOT, "xgb_model.joblib")
-RIDGE_MODEL_PATH = os.path.join(PROJECT_ROOT, "ridge_model.joblib")
-SCALER_PATH = os.path.join(PROJECT_ROOT, "scaler.joblib")
-ENSEMBLE_WEIGHTS_PATH = os.path.join(PROJECT_ROOT, "ensemble_weights.joblib")
+MODEL_DIR = os.environ.get("MODEL_DIR", PROJECT_ROOT)
+PYTORCH_MODEL_PATH = os.path.join(MODEL_DIR, "best_bone_age_model.pth")
+XGB_MODEL_PATH = os.path.join(MODEL_DIR, "xgb_model.joblib")
+RIDGE_MODEL_PATH = os.path.join(MODEL_DIR, "ridge_model.joblib")
+SCALER_PATH = os.path.join(MODEL_DIR, "scaler.joblib")
+ENSEMBLE_WEIGHTS_PATH = os.path.join(MODEL_DIR, "ensemble_weights.joblib")
 
 
 class ResNetBoneModel(nn.Module):
