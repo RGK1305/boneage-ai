@@ -121,6 +121,19 @@ prmlpro/
 - **RSNA Bone Age dataset** (for model export step)
 - *(Optional)* Docker & Docker Compose
 
+### 📥 Download Model Weights
+Because the pre-trained model weights exceed GitHub's file size limits, they are hosted externally. 
+
+Before running the FastAPI backend, please download the following artifacts and place them directly into the folder directory:
+* [Download Model Weights Folder Here](https://drive.google.com/drive/folders/1K2w1VhoD-sniUc_wP7-AYfx9VDzWxn4Q?usp=sharing)
+
+**Required Files:**
+1. `best_bone_age_model.pth` (ResNet50 Backbone)
+2. `xgb_model.joblib` (XGBoost Regressor)
+3. `ridge_model.joblib` (Ridge Regressor)
+4. `ensemble_weights.joblib` (Optimized Blend Weights)
+5. `scaler.joblib` (Tabular Feature Scaler)
+
 ### 1. Clone the Repository
 
 ```bash
