@@ -5,7 +5,7 @@ colorFrom: blue
 colorTo: indigo
 sdk: docker
 app_port: 7860
-pinned: false
+pinned: true
 license: mit
 short_description: Automated Bone Age Assessment with Grad-CAM Explainability
 ---
