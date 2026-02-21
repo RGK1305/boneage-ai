@@ -137,7 +137,7 @@ Before running the FastAPI backend, please download the following artifacts and 
 ### 1. Clone the Repository
 
 ```bash
-git clone https://github.com/<your-username>/boneage-ai.git
+git clone https://github.com/RGK1305/boneage-ai.git
 cd boneage-ai
 ```
 
