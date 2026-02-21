@@ -1,3 +1,15 @@
+---
+title: BoneAge AI
+emoji: 🦴
+colorFrom: blue
+colorTo: indigo
+sdk: docker
+app_port: 7860
+pinned: false
+license: mit
+short_description: Automated Bone Age Assessment with Grad-CAM Explainability
+---
+
 <div align="center">
 
 # 🦴 BoneAge AI
